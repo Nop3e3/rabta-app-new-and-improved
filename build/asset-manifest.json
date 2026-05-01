@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d938f048.css",
+    "main.js": "/static/js/main.d0cdd8fa.js",
+    "static/media/Rafiq.svg": "/static/media/Rafiq.0f7cd6c0ef6c3e4d5aa1b4d0c1a5645a.svg",
+    "static/media/diversity_3.svg": "/static/media/diversity_3.7e369251ae27172c4e7534ce5e090654.svg",
+    "static/media/person_raised_hand.svg": "/static/media/person_raised_hand.b669e863c1fdb86c0d1a5db7d1e4b686.svg",
+    "static/media/settings.svg": "/static/media/settings.221729be445f8fe542e4fbdcb797f265.svg",
+    "static/media/book_ribbon.svg": "/static/media/book_ribbon.6c2dcb36a01a0585f5da0c8656f4c04d.svg",
+    "static/media/rewarded_ads.svg": "/static/media/rewarded_ads.2b30b7b5c29381157cbb8e5c50a98fea.svg",
+    "static/media/BG.svg": "/static/media/BG.c7b57d60c1afa23a4a61.svg",
+    "static/media/bg2.svg": "/static/media/bg2.441f33982a16bcf8b2c0.svg",
+    "static/media/account_balance_wallet.svg": "/static/media/account_balance_wallet.b4bde55f006c7099702623dca1925482.svg",
+    "static/media/mark_email_unread.svg": "/static/media/mark_email_unread.90432630a20b5bfe1b71656392697168.svg",
+    "static/media/Frame 1000006445.svg": "/static/media/Frame 1000006445.8d6c092d71dc432001f2fae798a17a6e.svg",
+    "static/media/Frame 1000006268.svg": "/static/media/Frame 1000006268.cef80078c0503924682358ebc911867c.svg",
+    "static/media/Frame 1000006414.svg": "/static/media/Frame 1000006414.df2b6eb61078616558d50020527ec34b.svg",
+    "static/media/mic.svg": "/static/media/mic.69fa87c9b9affd96ce0ce81ca1817bc9.svg",
+    "static/media/logout.svg": "/static/media/logout.a18e4fce5b57f11590b3947edd481f2c.svg",
+    "index.html": "/index.html",
+    "static/media/bookmark.svg": "/static/media/bookmark.e9bf776dfb3182043f81496f75b12113.svg",
+    "static/media/search.svg": "/static/media/search.bb7a1d4aa613251bf9e0ea971e4f0887.svg",
+    "static/media/home.svg": "/static/media/home.e20e51279b6dfe609d240e79230df1b1.svg",
+    "main.d938f048.css.map": "/static/css/main.d938f048.css.map",
+    "main.d0cdd8fa.js.map": "/static/js/main.d0cdd8fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d938f048.css",
+    "static/js/main.d0cdd8fa.js"
+  ]
+}

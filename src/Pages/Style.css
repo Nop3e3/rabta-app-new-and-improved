@@ -1,0 +1,689 @@
+.body{
+width: 440px;
+height: 956px;
+display: flex;
+justify-self: center;
+background: linear-gradient(0deg, rgba(253, 247, 78, 0.60) -84.5%, rgba(0, 0, 0, 0.00) 100%), 
+                     linear-gradient(0deg, #1E1E1E -2.57%, rgba(0, 0, 0, 0.38) 192.79%), 
+                     linear-gradient(180deg, #000 0%, #1E1E1E 100%);
+stroke-width: 1px;
+
+
+  position: relative;
+
+overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lexend Exa', sans-serif;
+  overflow: hidden;
+  
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;600;700&display=swap');
+
+/* ── Root ───────────────────────────────────────────────── */
+.rabta-root {
+  position: relative;
+  min-height: 100vh;
+  background-color: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lexend Exa', sans-serif;
+  overflow: hidden;
+  padding: 48px 24px;
+  box-sizing: border-box;
+}
+
+/* Subtle noise / grain overlay */
+.rabta-bg-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* ── Container ───────────────────────────────────────────── */
+.rabta-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  background-image: url(../Assets/BG.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 330px;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-position: top;
+  opacity: 1;
+  /* pointer-events: none; ← REMOVED */
+}
+
+/* ── Star ────────────────────────────────────────────────── */
+.rabta-top {
+  margin-bottom: 28px;
+  animation: starPulse 3s ease-in-out infinite;
+}
+
+.rabta-star {
+  width: 38px;
+  height: 38px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
+}
+
+@keyframes starPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1) rotate(0deg); }
+  50%       { opacity: 1;    transform: scale(1.08) rotate(15deg); }
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
+.rabta-hero {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.rabta-headline {
+  font-size: clamp(1.45rem, 5.5vw, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: 0.12em;
+  margin: 0 0 18px;
+  color: #c8c8c4;
+}
+
+.rabta-headline-light {
+  font-weight: 300;
+  color: #b0b0aa;
+}
+
+.rabta-headline-bold {
+  font-weight: 700;
+  color: #d8d8d0;
+}
+
+.rabta-headline-accent {
+  font-weight: 700;
+  color: #d8d8d0;   /* muted olive-green — matches the screenshot's tinted "Rabta." */
+}
+
+.rabta-subline {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #666660;
+  margin: 0;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.rabta-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.rabta-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 24px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(153, 153, 153, 0.10) 100%);
+
+  cursor: pointer;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.15s ease, box-shadow 0.22s ease;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.162);
+  font-family: 'Lexend Exa', sans-serif;
+}
+
+.rabta-btn:hover,
+.rabta-btn--hovered {
+  background: linear-gradient(
+    135deg,
+    rgba(129, 135, 92, 0.317) 0%,
+    rgba(54, 58, 38, 0.98) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+}
+
+.rabta-btn:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+.rabta-btn-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.rabta-btn-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #e8e8e0;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.rabta-footer-text {
+  font-size: 0.78rem;
+  height: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.rabta-login-link {
+  color: #c0c0b8;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.18s ease;
+}
+
+.rabta-login-link:hover {
+  color: #ffffff;
+}
+
+
+
+
+.spacedown{
+  width: 100%;
+  height:100px;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;600;700&display=swap');
+
+/* ── Root ─────────────────────────────────────────────── */
+.signin-root {
+  width: 440px;
+  min-height: 956px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  background: linear-gradient(0deg, rgba(253, 247, 78, 0.60) -84.5%, rgba(0, 0, 0, 0.00) 100%),
+              linear-gradient(0deg, #1E1E1E -2.57%, rgba(0, 0, 0, 0.38) 192.79%),
+              linear-gradient(180deg, #000 0%, #1E1E1E 100%);
+  font-family: 'Lexend Exa', sans-serif;
+  box-sizing: border-box;
+
+}
+
+/* ── Loading screen ─────────────────────────────────────── */
+.home-loading {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #0e0f0a 0%, #1a1c14 100%);
+}
+
+.home-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: loadingFadeIn 0.5s ease both;
+}
+
+@keyframes loadingFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.home-loading-logo {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-loading-star {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.3));
+  animation: starSpin 2.5s ease-in-out infinite;
+}
+
+@keyframes starSpin {
+  0%   { transform: rotate(0deg)  scale(1);    opacity: 0.7; }
+  50%  { transform: rotate(20deg) scale(1.12); opacity: 1;   }
+  100% { transform: rotate(0deg)  scale(1);    opacity: 0.7; }
+}
+
+.home-loading-text {
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.18em;
+  margin: 0;
+}
+
+.home-loading-bar-track {
+  width: 120px;
+  height: 3px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.home-loading-bar-fill {
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #6b7a2e, #b8c840, #6b7a2e);
+  background-size: 200% 100%;
+  animation: barSlide 1.6s ease-in-out infinite;
+}
+
+@keyframes barSlide {
+  0%   { background-position: 200% 0; width: 40%;  }
+  50%  { background-position: 0% 0;   width: 70%;  }
+  100% { background-position: -200% 0; width: 40%; }
+}
+
+
+
+
+
+
+
+/* ── Container ────────────────────────────────────────── */
+.signin-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  padding: 10px;
+padding-top: 280px;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: top;
+padding-bottom: 20px;
+justify-content: space-between;
+border-radius: 20px;
+box-shadow: #b0b0aa18;
+  background-image:url(../Assets/bg2.svg) ;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.signin-header {
+  margin-bottom: 40px;
+}
+
+.signin-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #d8d8d0;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.signin-subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #888880;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ── Form ─────────────────────────────────────────────── */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Field ────────────────────────────────────────────── */
+.signin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.signin-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #ccccc4;
+  letter-spacing: 0.06em;
+}
+
+/* ── Input wrap ───────────────────────────────────────── */
+.signin-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.signin-input {
+  width: 100%;
+  padding: 18px 50px 18px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e8e8e0;
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.signin-input::placeholder {
+  color: #ffffff3b;
+}
+
+.signin-input:focus {
+  border-color: rgba(160, 170, 100, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Email valid checkmark ────────────────────────────── */
+.signin-check {
+  position: absolute;
+  right: 14px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #c8d44a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Eye toggle ───────────────────────────────────────── */
+.signin-eye {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.signin-eye:hover {
+  opacity: 1;
+}
+
+/* ── Forgot ───────────────────────────────────────────── */
+.signin-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+  margin-top: -8px;
+}
+
+.signin-forgot {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #aaaaaa;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.18s;
+}
+
+.signin-forgot:hover {
+  color: #ffffff;
+}
+
+/* ── Login button ─────────────────────────────────────── */
+.signin-btn {
+  width: 100%;
+  padding: 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(160, 170, 80, 0.3);
+  background: linear-gradient(180deg, #6b7a2e 0%, #4a5520 100%);
+  color: #f0f0e8;
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.15s ease;
+  margin-bottom: 36px;
+  display: flex;
+padding: 12px 21px;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+flex: 1 0 0;
+background: linear-gradient(180deg, rgba(237, 254, 142, 0.60) 0%, rgba(86, 94, 36, 0.60) 100%);
+
+  box-shadow: 0 4px 20px rgba(100, 120, 30, 0.25);
+}
+
+.signin-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.signin-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* ── Divider ──────────────────────────────────────────── */
+.signin-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.signin-divider-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.signin-divider-text {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #e8e8e0;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* ── Social buttons ───────────────────────────────────── */
+.signin-social {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.signin-social-btn {
+  flex: 1;
+  padding: 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(80, 88, 40, 0.7) 0%, rgba(50, 58, 24, 0.85) 100%);
+  cursor: pointer;
+  display: flex;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(153, 153, 153, 0.10) 100%);
+
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.signin-social-btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+.signin-social-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.signin-footer-text {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #e8e8e0;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 0;
+}
+
+.signin-signup-link {
+  color: #e8e8e0;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.signin-signup-link:hover {
+  color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.bodyy{
+  width: 440px;
+  height: 956px;
+  background: #1E1E1E;
+font-family: Lexend exa;
+color: #ffffff;
+overflow-y: scroll;
+
+
+}
+.results{
+  color: rgba(255, 255, 255, 0.36);
+
+font-size: 14px;
+
+}
+
+.Sec{
+  display: flex;
+  flex-direction: column;
+margin-top: 30px;
+  width: 400px;
+  height: fit-content;
+  margin-bottom: 16px;
+  overflow-x: visible;
+  justify-self: center;
+}
+.Secc{
+  display: flex;
+  flex-direction: column;
+margin-top: 30px;
+align-items: center;
+  margin-bottom: 16px;
+
+  width: 440px;
+  overflow-x: visible;
+  justify-self: center;
+}
+.ttll{
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: row;
+  width: 400px;
+
+  justify-content: space-between; 
+
+}
+
+.posts-list{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.filter{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.welcomebck{
+  color: #FFF;
+
+font-family: "Lexend Exa";
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.lesson{
+  color: #FFF;
+margin-top: 10px;
+font-family: "Lexend Exa";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.lessonname{
+  color: #FFF;
+font-family: "Lexend Exa";
+font-size: 16px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+margin-top: 10px;
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: auto;
+text-decoration-thickness: auto;
+text-underline-offset: auto;
+text-underline-position: from-font;
+}

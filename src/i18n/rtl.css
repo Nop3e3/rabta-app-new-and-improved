@@ -1,0 +1,106 @@
+/* Global Right-to-Left adjustments applied when document.dir = rtl.
+   This file is imported once from src/index.js and only takes effect
+   when the user switches to Arabic. */
+
+[dir="rtl"] {
+  /* Use a font stack that includes good Arabic faces.
+     Tajawal/Cairo are common, fall back to system. */
+  font-family: "Tajawal", "Cairo", "Segoe UI", "Helvetica Neue", Arial,
+    "Noto Sans Arabic", sans-serif;
+}
+
+/* Generic flex / spacing flips */
+[dir="rtl"] body,
+[dir="rtl"] .body {
+  text-align: right;
+}
+
+/* Inputs: keep numerals readable but align text correctly */
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+}
+
+/* The bottom navigation should mirror order */
+[dir="rtl"] .bnav {
+  direction: rtl;
+}
+
+/* Topbar mirroring */
+[dir="rtl"] .topbar {
+  direction: rtl;
+}
+[dir="rtl"] .topbar-search {
+  direction: rtl;
+}
+[dir="rtl"] .topbar-search-input {
+  text-align: right;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+/* Side menu slides from the right in RTL */
+[dir="rtl"] .sidemenu {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+[dir="rtl"] .sidemenu.sidemenu--open {
+  transform: translateX(0);
+}
+[dir="rtl"] .sidemenu-item {
+  flex-direction: row;
+  text-align: right;
+}
+[dir="rtl"] .sidemenu-chevron {
+  transform: scaleX(-1);
+}
+
+/* Cards, lists */
+[dir="rtl"] .card,
+[dir="rtl"] [class*="card"],
+[dir="rtl"] [class*="-card"] {
+  text-align: right;
+}
+
+/* Signin / signup forms */
+[dir="rtl"] .signin-root,
+[dir="rtl"] .signin-container,
+[dir="rtl"] .signin-form,
+[dir="rtl"] .signin-field {
+  direction: rtl;
+  text-align: right;
+}
+[dir="rtl"] .signin-input {
+  text-align: right;
+}
+[dir="rtl"] .signin-eye,
+[dir="rtl"] .signin-check {
+  left: 12px;
+  right: auto;
+}
+[dir="rtl"] .signin-forgot-row {
+  text-align: left;
+}
+
+/* Rabta landing */
+[dir="rtl"] .rabta-container,
+[dir="rtl"] .rabta-hero,
+[dir="rtl"] .rabta-buttons,
+[dir="rtl"] .rabta-btn,
+[dir="rtl"] .rabta-footer-text {
+  direction: rtl;
+  text-align: right;
+}
+[dir="rtl"] .rabta-btn {
+  flex-direction: row;
+}
+[dir="rtl"] .rabta-btn-icon {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+/* Generic helpers: anything that uses margin-left / margin-right
+   should be reviewed per-component if it looks off. The rules above
+   cover the dominant layouts. Add new selectors here as you find
+   visual issues in RTL mode. */

@@ -1,0 +1,85 @@
+.lang-toggle {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.lang-toggle:focus-visible {
+  outline: 2px solid #EDFE8E;
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+.lang-toggle-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 56px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #1f1f1f;
+  color: #fff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease;
+}
+
+.lang-toggle-pill--ar {
+  background: #2a2a2a;
+}
+
+.lang-toggle-opt {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  width: 18px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.lang-toggle-opt--ar {
+  font-size: 14px;
+}
+
+.lang-toggle-pill .lang-toggle-opt--en { color: #EDFE8E; }
+.lang-toggle-pill .lang-toggle-opt--ar { color: #888; }
+
+.lang-toggle-pill--ar .lang-toggle-opt--en { color: #888; }
+.lang-toggle-pill--ar .lang-toggle-opt--ar { color: #EDFE8E; }
+
+.lang-toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(237, 254, 142, 0.18);
+  border: 1px solid rgba(237, 254, 142, 0.5);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.lang-toggle-pill--ar .lang-toggle-knob {
+  transform: translateX(22px);
+}
+
+/* When the document is RTL, the flex children visually swap, so the
+   knob has to track the same target from the opposite side. */
+[dir="rtl"] .lang-toggle-knob {
+  left: auto;
+  right: 6px;
+}
+[dir="rtl"] .lang-toggle-pill--ar .lang-toggle-knob {
+  transform: translateX(-22px);
+}
